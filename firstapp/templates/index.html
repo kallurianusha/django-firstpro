@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form method = "POST">
+      {% csrf_token %}
+      <label for="firstname">FIRSTNAME:</label><br>
+      <input type ="text", id="firstname" name="firstname"><br>
+      <label for="lastname">LASTNAME:</label><br>
+      <input type ="text", id="lastname" name="lastname"><br><br>
+      <label for="salary">SALARY:</label><br>
+      <input type ="text", id="salary" name="salary"><br>
+      <label for="age">AGE:</label><br>
+      <input type ="text", id="age" name="age"><br><br>
+      <label for="gender">GENDER:</label><br>
+      <input type ="text", id="gender" name="gender"><br>
+      <label for="email">EMAIL:</label><br>
+      <input type ="text", id="email" name="email"><br><br>
+      <label for="domain">DOMAIN:</label><br>
+      <input type ="text", id="domain" name="domain"><br>
+      <label for="company">COMPANY:</label><br>
+      <input type ="text", id="company" name="company"><br><br>
+      <label for="experience">EXPERIENCE:</label><br>
+      <input type ="text", id="experience" name="experience"><br><br>
+      <input type ="SUBMIT" value="SUBMIT">      
+   </form>
+
+
+   {% for employee in Employees %}
+   <div>
+       <p>{{employee.firstname}}</p>
+       <p>{{employee.lastname}}</p>
+       <p>{{employee.salary}}</p>
+       <p>{{employee.age}}</p>
+       <p>{{employee.gender}}</p>
+       <p>{{employee.email}}</p>
+       <p>{{employee.email}}</p>
+       <p>{{employee.domain}}</p>
+       <p>{{employee.company}}</p>
+       <p>{{employee.experience}}</p>
+       <p>---------------------------</p>
+   </div>
+   {% endfor %}
+
+</body>
+</html>
